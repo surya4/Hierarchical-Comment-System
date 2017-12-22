@@ -4,35 +4,31 @@
     <body>
         <% include ../partials/nav %>
             <div class="container">
+                <p>
+                    <%= title %>
+                </p>
                 <div class="row">
-                    <div class="panel">
-                        <div class="panel-body">
-                            <% if (messages.success) {%>
-                                <div class="alert alert-success">
-                                    <% messages.success.forEach(function(msg){ %>
-                                        <p>
-                                            <%= msg %>
-                                        </p>
-                                        <% });%>
-                                </div>
-                                <% }%>
-                                    <% if (messages.error) {%>
-                                        <div class="alert alert-danger">
-                                            <% messages.error.forEach(function(msg){ %>
-                                                <p>
-                                                    <%= msg %>
-                                                </p>
-                                                <% });%>
-                                        </div>
-                                        <% }%>
-                                            <% if (messages.info) {%>
-                                                <div class="alert alert-info">
-                                                    <% messages.info.forEach(function(msg){ %>
-                                                        <p>
-                                                            <%= msg %>
-                                                        </p>
-                                                        <% });%>
-                                                </div>
+                    <div class="col-md-6">
+                        <div class="widget-area no-padding blank">
+                            <div class="status-upload">
+                                <form>
+                                    <textarea placeholder="What are you doing right now?"></textarea>
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="btn btn-default stat-item">
+                                                <i class="fa fa-thumbs-up icon"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="btn btn-default stat-item">
+                                                <i class="fa fa-thumbs-down icon"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <button type="submit" class="btn btn-success green">
+                                        <i class="fa fa-share"></i> Reply</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

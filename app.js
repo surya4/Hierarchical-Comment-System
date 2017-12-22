@@ -9,15 +9,11 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 var expressValidator = require('express-validator');
 const dotenv = require('dotenv');
-var passport = require('passport');
-
 // Load environment variables from .env file
 dotenv.load();
 
 // Routers
 const index = require('./src/routes/index');
-
-require('./src/controllers/passport');
 
 const app = express();
 
@@ -38,8 +34,6 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(flash());
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(function(req, res, next) {
     res.locals.user = req.user;
     next();
